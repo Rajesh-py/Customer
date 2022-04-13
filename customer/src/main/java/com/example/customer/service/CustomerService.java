@@ -15,5 +15,7 @@ public class CustomerService {
     private CustomerRepo repository;
 
 
-
+    public Customer addCustomer(Customer customer){
+        return repository.save(customer);
+    }
 }

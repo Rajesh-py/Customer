@@ -22,7 +22,11 @@ public class CustomerController {
     private RestTemplate restTemplate;
 
 
-
+    @PostMapping("/addCustomer")
+    public ResponseEntity<Customer> addCustomer (@RequestBody Customer customer){
+        Customer  cs=customerService.addCustomer(customer);
+        return new ResponseEntity<Customer>(cs,HttpStatus.CREATED);
+    }
 
 
 }
